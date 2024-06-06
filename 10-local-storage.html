@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+background-color: #000000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23220000' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23440000' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23660000' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23880000' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23A00' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+        }
+        
+        .jumbotron {
+            position : relative;
+            overflow: hidden;
+        }
+        video {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 0;
+        }
+        .herder-text {
+            z-index: 2;
+            position: relative;
+        }
+
+        .herder-text{
+            position: relative;
+        }
+
+        table, tr, th, tbody, td {
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body onload = "check_data()"> 
+    <header>
+
+        <div class="jumbotron p-5 bg-dark text-white rounded">
+            <video src="https://cdn.pixabay.com/video/2023/10/02/183279-870457579_tiny.mp4" autoplay loop  muted>
+
+            </video>
+            <!-- <img src="https://bbdu.ac.in/wp-content/uploads/2020/02/utkarsh-website-banner-background.jpg" alt=""> -->
+            <div class="herder-text ms-5">
+                <h1>Jumbotron Example</h1>
+                <p>Lorem ipsum...</p>
+            </div>
+          </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: forestgreen;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Napong</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <br>
+        <div class="card mt-5 m-auto" style="width: 40rem;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_0HFWy0Ez-3UJcExxMlqnWRj5DxYlIsKtEQ&s" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Student Data</h5>
+              <p class="card-text">
+                <!-- <form> -->
+                    <div class="mb-3">
+                      <label class="form-label">Student Name</label>
+                      <input type="text" class="form-control" id="sname" name="sname">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Phone Number</label>
+                      <input type="text" class="form-control" id="Phone" name="Phone">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <select class="form-select" id="dept" name="dept">
+                            <option selected>Please Select Item</option>
+                            <option value="แผนกช่างยนต์">แผนกช่างยนต์</option>
+                            <option value="แผนกคอมพิวเตอร์">แผนกคอมพิวเตอร์</option>
+                            <option value="แผนกเทคโนโลยีสารสนเทศ">แผนกเทคโนโลยีสารสนเทศ</option>
+                          </select>
+                    </div> 
+                
+
+                    <button type="submit" class="btn btn-primary w-25"
+                    onclick="click_submit()">Submit</button>
+                    <button type="reset" class="btn btn-primary w-25"
+                    onclick="click_reset()">Reset</button>
+                  <!-- </form> -->
+              </p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              <p id="output1"></p>
+              <p id="output2"></p>
+              <p id="output3"></p>
+              <p id="output4"></p>
+
+              <br>
+              <br>
+
+
+              <table id="table_student" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Sname</th>
+                        <th>Phone</th>
+                        <th>Dept</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+              </table>
+              <br><br><br><br><br>
+
+
+            </div>
+          </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        let sname = []
+        let Phone = []
+        let dept = []
+
+
+        function click_submit() {
+
+            if(document.getElementById('sname').value == '' ||
+               document.getElementById('Phone').value == '' ||
+               document.getElementById('dept').value == 'Please Select Item' )
+               {
+                alert('กรุณาป้อนข้อมูล')
+               } else {
+            sname.push(document.getElementById('sname').value)
+            Phone.push(document.getElementById('Phone').value)
+            dept.push(document.getElementById('dept').value)
+
+            
+
+            localStorage.setItem('sname', JSON.stringify(sname))
+            localStorage.setItem('Phone', JSON.stringify(Phone))
+            localStorage.setItem('dept', JSON.stringify(dept))
+
+            document.getElementById('sname').value = null
+            document.getElementById('Phone').value = null
+            document.getElementById('dept').selectedIndex = 0
+
+            alert('บันทึกเรียบร้อยแล้ว')
+               }
+
+        }
+
+        function click_reset() {
+            document.getElementById('sname').value = null
+            document.getElementById('Phone').value = null
+            document.getElementById('dept').selectedIndex = 0
+
+        }
+
+        function check_data() {
+
+            sname = JSON.parse(localStorage.getItem('sname'))
+            Phone = JSON.parse(localStorage.getItem('Phone'))
+            dept = JSON.parse(localStorage.getItem('dept'))
+            
+            if (sname == null) {sname = []}
+            if (Phone == null) {Phone = []}
+            if (dept == null) {dept = []}
+
+            // document.getElementById('output1').innerHTML = sname
+            // document.getElementById('output2').innerHTML = Phone
+            // document.getElementById('output3').innerHTML = dept  
+            
+            let table = document.querySelector('#table_student tbody')
+            let row = null
+            let column = null
+            for (let i = 0; i < sname.length; i++){
+                row = document.createElement('tr')
+                column = document.createElement('td')
+                column.textContent = sname[i]
+                row.appendChild(column)
+
+                column = document.createElement('td')
+                column.textContent = Phone[i]
+                row.appendChild(column)
+
+                column = document.createElement('td')
+                column.textContent = dept[i]
+                row.appendChild(column)
+
+                table.appendChild(row)
+            }
+        }
+
+    
+
+    </script>
+
+</body>
+</html>
